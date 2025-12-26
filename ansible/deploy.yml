@@ -1,0 +1,11 @@
+- hosts: localhost
+  become: yes
+  tasks:
+    - name: Run Java App Container
+      docker_container:
+        name: java-app
+        image: java-app
+        state: started
+        ports:
+          - "8081:8080"
+
