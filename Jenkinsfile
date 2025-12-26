@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/mustaqim12345/devops-project-repo.git'
-            }
-        }
-
         stage('Build') {
             steps {
                 sh 'mvn clean package'
