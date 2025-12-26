@@ -5,7 +5,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                https://github.com/mustaqim12345/devops-project-repo.git
+                git 'https://github.com/mustaqim12345/devops-project-repo.git'
             }
         }
 
@@ -26,6 +26,7 @@ pipeline {
                 sh 'ansible-playbook ansible/deploy.yml'
             }
         }
+
     }
 }
 
