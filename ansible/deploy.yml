@@ -1,0 +1,10 @@
+- hosts: localhost
+  become: true
+
+  tasks:
+    - name: Stop old container
+      shell: docker rm -f java-app || true
+
+    - name: Run new container
+      shell: docker run -d -p 8080:8080 --name java-app java-image
+
