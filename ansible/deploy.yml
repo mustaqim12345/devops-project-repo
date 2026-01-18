@@ -2,10 +2,10 @@
   become: true
 
   tasks:
-    - name: Stop running container if exists
+    - name: Stop and remove old container
       shell: |
         docker stop java-app || true
         docker rm java-app || true
 
-    - name: Run new container
-      shell: docker run -d --restart always -p 8080:8080 --name java-app java-image
+    - name: Run new container on port 8082
+      shell: docker run -d --restart always -p 8082:8080 --name java-app java-image
