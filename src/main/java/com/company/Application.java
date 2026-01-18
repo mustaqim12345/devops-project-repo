@@ -10,12 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class Application {
 
     @GetMapping("/")
-    public String home() {
-        return "CI/CD Pipeline Working Successfully 🚀";
+    public String hello() {
+        return "Hello from Docker + Jenkins + GCP 🚀";
     }
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
 }
-
